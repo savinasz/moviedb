@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class JsonAPIActivity extends AppCompatActivity {
+
     private String TAG = MainActivity.class.getSimpleName();
 
     private ProgressDialog pDialog;
@@ -55,6 +56,7 @@ public class JsonAPIActivity extends AppCompatActivity {
             HttpHandler sh = new HttpHandler();
 
             String jsonStr = sh.makeServiceCall(url);
+
             Log.e(TAG, "Response from url: " + jsonStr);
 
             if (jsonStr != null){
@@ -63,7 +65,7 @@ public class JsonAPIActivity extends AppCompatActivity {
 
                     JSONArray contacts = jsonObj.getJSONArray("contacts");
 
-                    for (int i = 0; i< contacts.length(); i++){
+                    for (int i = 0; i < contacts.length(); i++){
                         JSONObject c = contacts.getJSONObject(i);
 
                         String id = c.getString("id");
@@ -120,6 +122,7 @@ public class JsonAPIActivity extends AppCompatActivity {
                     JsonAPIActivity.this, contactList,
                     R.layout.list_item, new String[]{"name", "email",
             "mobile"}, new int[]{R.id.name, R.id.email, R.id.mobile});
+            lv.setAdapter(adapter);
         }
     }
 }

@@ -34,6 +34,7 @@ public class JsonParseActivity extends AppCompatActivity {
                 user.put("name", obj.getString("name"));
                 user.put("designation", obj.getString("designation"));
                 user.put("location", obj.getString("location"));
+                userList.add(user);
             }
             ListAdapter adapter = new SimpleAdapter(JsonParseActivity.this, userList, R.layout.list_row,
                     new String[]{"name", "designation", "location"}, new int[]{R.id.name, R.id.designation, R.id.location});
