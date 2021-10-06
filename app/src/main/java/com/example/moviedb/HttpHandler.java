@@ -53,7 +53,8 @@ public class HttpHandler {
             }catch (IOException e){
                 e.printStackTrace();
             }
+            return sb.toString();
         }
-        return sb.toString();
     }
 }
+

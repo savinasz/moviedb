@@ -21,8 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".JsonAPIActivity" />
-        <activity android:name=".JsonParseActivity" />
         <activity android:name=".MovieDBActivity"/>
+        <activity android:name=".JsonParseActivity" />
     </application>
 
 </manifest>
